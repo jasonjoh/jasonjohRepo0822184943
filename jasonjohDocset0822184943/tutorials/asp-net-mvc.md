@@ -1,27 +1,36 @@
-# Build ASP.NET MVC apps with Microsoft Graph
+---
+title: Tutorial - Build ASP.NET MVC apps with Microsoft Graph
+description: In this tutorial, you will create an ASP.NET MVC app that authenticates with Azure AD and calls Microsoft Graph.
+author: jasonjoh
+
+ms.topic: tutorial
+ms.date: 09/05/2018
+ms.author: jasonjoh
+#customer intent: As a developer, I need to create ASP.NET MVC apps that can access the Microsoft Graph.
+---
+# Tutorial: Build ASP.NET MVC apps with Microsoft Graph
 
 In this lab you will create an ASP.NET MVC application, configured with Azure Active Directory (Azure AD) for authentication & authorization using the Microsoft Authentication Library (MSAL) & OWIN middleware, that accesses data in Office 365 using the Microsoft Graph .NET SDK.
 
-## In this lab
+In this tutorial, you will learn how to:
 
-- [Exercise 1: Create an ASP.NET MVC Web Application](#exercise-1-create-an-aspnet-mvc-web-application)
-- [Register a web application with the Application Registration Portal](#exercise-2-register-a-web-application-with-the-application-registration-portal)
-- [Extend the app for Azure AD Authentication](#exercise-3-extend-the-app-for-azure-ad-authentication)
-- [Extend the app for Microsoft Graph](#exercise-4-extend-the-app-for-microsoft-graph)
+> [!div class="checklist"]
+> - Create an ASP.NET MVC Web Application
+> - Register a web application with the Application Registration Portal
+> - Extend the app for Azure AD Authentication
+> - Extend the app for Microsoft Graph
 
-## Prerequisites
-
-To complete this lab, you need the following:
-
-- [Visual Studio](https://visualstudio.microsoft.com/vs/) installed on your development machine. If you do not have Visual Studio, visit the previous link for download options. (**Note:** This tutorial was written with Visual Studio 2017 version 15.81. The steps in this guide may work with other versions, but that has not been tested.)
-- Either a personal Microsoft account with a mailbox on Outlook.com, or a Microsoft work or school account.
-
-If you don't have a Microsoft account, there are a couple of options to get a free account:
+If you don't have a Microsoft account, sign up for a free account before you beging. There are a couple of options to get a free account:
 
 - You can [sign up for a new personal Microsoft account](https://signup.live.com/signup?wa=wsignin1.0&rpsnv=12&ct=1454618383&rver=6.4.6456.0&wp=MBI_SSL_SHARED&wreply=https://mail.live.com/default.aspx&id=64855&cbcxt=mai&bk=1454618383&uiflavor=web&uaid=b213a65b4fdc484382b6622b3ecaa547&mkt=E-US&lc=1033&lic=1).
 - You can [sign up for the Office 365 Developer Program](https://developer.microsoft.com/office/dev-program) to get a free Office 365 subscription.
 
-## Exercise 1: Create an ASP.NET MVC Web Application
+## Prerequisites
+
+- [Visual Studio](https://visualstudio.microsoft.com/vs/) installed on your development machine. If you do not have Visual Studio, visit the previous link for download options. (**Note:** This tutorial was written with Visual Studio 2017 version 15.81. The steps in this guide may work with other versions, but that has not been tested.)
+- Either a personal Microsoft account with a mailbox on Outlook.com, or a Microsoft work or school account.
+
+## Create an ASP.NET MVC Web Application
 
 Open Visual Studio, and select **File > New > Project**. In the **New Project** dialog, do the following:
 
@@ -250,7 +259,7 @@ Save all of your changes and restart the server. Now, the app should look very d
 
 ![A screenshot of the redesigned home page](/Images/create-app-01.png)
 
-## Exercise 2: Register a web application with the Application Registration Portal
+## Register a web application with the Application Registration Portal
 
 In this exercise, you will create a new Azure AD web application registration using the Application Registry Portal (ARP).
 
@@ -294,7 +303,7 @@ In this exercise, you will create a new Azure AD web application registration us
 
 1. Scroll to the bottom of the page and select **Save**.
 
-## Exercise 3: Extend the app for Azure AD Authentication
+## Extend the app for Azure AD Authentication
 
 In this exercise you will extend the application from the previous exercise to support authentication with Azure AD. This is required to obtain the necessary OAuth access token to call the Microsoft Graph. In this step you will integrate the OWIN middleware and the [Microsoft Authentication Library](https://www.nuget.org/packages/Microsoft.Identity.Client/) library into the application.
 
@@ -774,7 +783,7 @@ However, this token is short-lived. The token expires an hour after it is issued
 
 Because the app is using the MSAL library and a `TokenCache` object, you do not have to implement any token refresh logic. The `ConfidentialClientApplication.AcquireTokenSilentAsync` method does all of the logic for you. It first checks the cached token, and if it is not expired, it returns it. If it is expired, it uses the cached refresh token to obtain a new one. You'll use this method in the following module.
 
-## Exercise 4: Extend the app for Microsoft Graph
+## Extend the app for Microsoft Graph
 
 In this exercise you will incorporate the Microsoft Graph into the application. For this application, you will use the [Microsoft Graph Client Library for .NET](https://github.com/microsoftgraph/msgraph-sdk-dotnet) to make calls to Microsoft Graph.
 
