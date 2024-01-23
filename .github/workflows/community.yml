@@ -2,7 +2,10 @@ name: Community Contributions
 
 on:
   pull_request:
-    branches: [ master ]
+    types:
+    - created
+    branches: 
+    - master
 
 jobs:
   add_to_milestone:
