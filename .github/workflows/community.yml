@@ -1,0 +1,13 @@
+name: Community Contributions
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  add_to_milestone:
+
+    if: ${{ vars.IS_PUBLIC_CONTRIBUTION_REPO == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+    - run: gh pr edit ${{ github.event.number }} --milestone "Community Contributions"
