@@ -1,5 +1,5 @@
 ---
-title: Tutorial - Build ASP.NET MVC apps with Microsoft Graph
+title: Tutorial - Build ASP.NET apps with Microsoft Graph
 description: In this tutorial, you will create an ASP.NET MVC app that authenticates with Azure AD and calls Microsoft Graph.
 author: jasonjoh
 
