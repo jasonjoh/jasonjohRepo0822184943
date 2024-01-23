@@ -7,7 +7,7 @@ on:
 jobs:
   add_to_milestone:
 
-    if: ${{ vars.IS_PUBLIC_CONTRIBUTION_REPO == 'true' }}
+    if: ${{ vars.IS_PUBLIC_CONTRIB_REPO == 'true' }}
     runs-on: ubuntu-latest
     steps:
     - run: gh pr edit ${{ github.event.number }} --milestone "Community Contributions"
