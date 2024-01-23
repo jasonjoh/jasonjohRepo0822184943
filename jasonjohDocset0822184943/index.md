@@ -27,10 +27,4 @@ JavaScript
 # [PHP](#tab/php)
 PHP
 
-# [PowerShell](#tab/powershell)
-PowerShell
-
-# [Python](#tab/python)
-Python
-
 ---
